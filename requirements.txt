@@ -6,3 +6,4 @@ matplotlib>=3.5.0
 seaborn>=0.11.0
 numba>=0.56.0
 tqdm>=4.67.3
+# asnu is bundled locally in the asnu/ folder (pure Python, no install needed)
