@@ -451,10 +451,10 @@ def run_parameter_sweep(n_iterations: int = 100, batch_size: int = 5,
     results.to_csv(out_path / "sweep_results_final.csv", index=False)
     print(f"\nFinal results: {out_path / 'sweep_results_final.csv'}")
 
-    viz = Visualizer()
-    sample = results.sample(min(10000, len(results))) if len(results) > 10000 else results
-    viz.plot_variance_vs_ratio(sample, str(out_path / "variance_analysis.png"))
-    viz.plot_threshold_curves(sample, str(out_path / "threshold_curves.png"))
+    # viz = Visualizer()
+    # sample = results.sample(min(10000, len(results))) if len(results) > 10000 else results
+    # viz.plot_variance_vs_ratio(sample, str(out_path / "variance_analysis.png"))
+    # viz.plot_threshold_curves(sample, str(out_path / "threshold_curves.png"))
 
     return results
 
