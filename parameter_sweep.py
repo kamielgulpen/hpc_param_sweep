@@ -191,13 +191,13 @@ class SimulationConfig:
 @dataclass
 class NetworkConfig:
     """Network parameters."""
-    base_folder: str = "data/networks/werkschool"
-    scale: float = 0.001
+    base_folder: str = "Data/networks/werkschool"
+    scale: float = 0.1
     reciprocity: int = 1
     transitivity: int = 0
     bridge: float = 0.2
-    n_communities_range: Tuple[float, float, int] = (1, 10, 10)
-    preferential_attachment_range: Tuple[float, float, int] = (0, 0, 1)
+    n_communities_range: Tuple[float, float, int] = (1, 1000, 10)
+    preferential_attachment_range: Tuple[float, float, int] = (0, 0.99, 10)
 
     def folder_path(self, n_comms: float, pref_att: float) -> str:
         return (f"{self.base_folder}/scale={self.scale}_comms={n_comms}_"
@@ -461,6 +461,6 @@ def run_parameter_sweep(n_iterations: int = 100, batch_size: int = 5,
 
 if __name__ == "__main__":
     np.random.seed(42)
-    results = run_parameter_sweep(n_iterations=10, batch_size=1, resume=True)
+    results = run_parameter_sweep(n_iterations=100, batch_size=1, resume=True)
     print("\nSummary:")
     print(results.groupby('threshold_value')['median_final_adoption'].describe())
