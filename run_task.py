@@ -36,6 +36,7 @@ def main():
     net = NetworkConfig()
     combinations = net.all_combinations()
     n_total = len(combinations)
+    print(n_total)
 
     if task_id >= n_total:
         print(f"Task {task_id} out of range (only {n_total} combinations). Exiting.")
@@ -54,6 +55,7 @@ def main():
         return
 
     analyzer = ContagionAnalyzer()
+    print(n_comms, pref_att)
     result = analyzer.run_single(n_comms, pref_att)
 
     if result:
