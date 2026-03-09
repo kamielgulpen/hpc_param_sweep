@@ -12,7 +12,7 @@
 # =============================================================================
 
 #SBATCH --job-name=param_sweep
-#SBATCH --array=0-99               # 100 tasks (0-indexed), one per parameter combo
+#SBATCH --array=0-10               # 100 tasks (0-indexed), one per parameter combo
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4          # numba parallel=True uses threads
 #SBATCH --time=02:00:00            # adjust per your cluster limits
